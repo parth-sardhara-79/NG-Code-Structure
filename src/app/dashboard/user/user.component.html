@@ -1,0 +1,19 @@
+<div class="container">
+  <a [routerLink]="[ '/dashboard/employee' ]">Employee</a> &nbsp;&nbsp;
+  <a [routerLink]="[ '/dashboard/user' ]">User</a> &nbsp;&nbsp;
+  <a [routerLink]="[ '/dashboard/profile-pic' ]">Profile Pic</a>
+  <br>
+  <br>
+</div>
+
+
+<div class="container">
+  <div *ngFor="let user of users">
+    <table class="table">
+      <tr>ID:- {{user.id}}</tr>
+      <tr>Title:- {{user.title}}</tr>
+      <tr>Body:- {{user.body}}</tr>
+      <hr>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="container">
+  <a [routerLink]="[ '/dashboard/employee' ]">Employee</a> &nbsp;&nbsp;
+  <a [routerLink]="[ '/dashboard/user' ]">User</a> &nbsp;&nbsp;
+  <a [routerLink]="[ '/dashboard/profile-pic' ]">Profile Pic</a>
+  <br>
+  <br>
+</div>
+
+<div class="container">
+    <h2>Profile Pic</h2>
+    <form [formGroup]="registrationEdit" (ngSubmit)="registrationEditSave()">
+      <div class="row">
+        <div class="col-md-6 form-group">
+          <label>Username</label>
+          <input class="form-control" type="text" formControlName="username" placeholder="Enter username">
+          <span class="text-danger"
+            *ngIf="registrationEdit.controls.username.invalid && (registrationEdit.controls.username.touched || registrationEdit.controls.username.dirty)">Username
+            is required.</span>
+        </div>
+        <div class="col-md-6">
+          <label>Password</label>
+          <input class="form-control" type="password" formControlName="password" placeholder="Enter password">
+          <span class="text-danger"
+            *ngIf="registrationEdit.controls.password.invalid && (registrationEdit.controls.password.touched || registrationEdit.controls.password.dirty)">Password
+            is required.</span>
+        </div>
+      </div>
+  
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+  
+  </div>

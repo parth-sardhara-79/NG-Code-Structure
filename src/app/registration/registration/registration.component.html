@@ -1,0 +1,41 @@
+<div class="container">
+  <h2>Registration</h2>
+  <form [formGroup]="registration" (ngSubmit)="registrationSave()">
+    <div class="row">
+      <div class="col-md-6 form-group">
+        <label>Username</label>
+        <input class="form-control" type="text" formControlName="username" placeholder="Enter username">
+        <span class="text-danger"
+          *ngIf="registration.controls.username.invalid && (registration.controls.username.touched || registration.controls.username.dirty)">Username
+          is required.</span>
+      </div>
+      <div class="col-md-6">
+        <label>Password</label>
+        <input class="form-control" type="password" formControlName="password" placeholder="Enter password">
+        <span class="text-danger"
+          *ngIf="registration.controls.password.invalid && (registration.controls.password.touched || registration.controls.password.dirty)">Password
+          is required.</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 form-group">
+        <label>Confirm password</label>
+        <input class="form-control" type="password" formControlName="confirmPassword"
+          placeholder="Enter confirm password">
+        <span class="text-danger"
+          *ngIf="registration.controls.confirmPassword.invalid && (registration.controls.confirmPassword.touched || registration.controls.confirmPassword.dirty)">Confirm Password
+          is required.</span>
+      </div>
+      <div class="col-md-6">
+        <label>Mobile NO.:-</label>
+        <input class="form-control" type="number" formControlName="mobile" placeholder="Enter mobile no.:-">
+        <span class="text-danger"
+          *ngIf="registration.controls.mobile.invalid && (registration.controls.mobile.touched || registration.controls.mobile.dirty)">Mobile
+          is required.</span>
+      </div>
+    </div>
+
+      <button type="submit" class="btn btn-primary">Save</button>
+  </form>
+
+</div>
